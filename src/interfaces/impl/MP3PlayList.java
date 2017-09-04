@@ -21,14 +21,12 @@ import utils.FileUtils;
 public class MP3PlayList implements PlayList {
 
     public static final String PLAYLIST_FILE_EXTENSION = "pls";
-
     public static final String PLAYLIST_FILE_DESCRIPTION = "Playlist";
-
     private static final String EMPTY_STRING = "";
 
     private final Player player;
-
     private final JList playlist;
+    
     private DefaultListModel model = new DefaultListModel();
 
     public MP3PlayList(JList playlist, Player player) {
