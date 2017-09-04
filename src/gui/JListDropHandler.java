@@ -42,12 +42,11 @@ public class JListDropHandler extends DropTargetAdapter {
             dtde.rejectDrop();
         }
     }
-
+    //NetBeans suggests use functional operation instead of 'for' loop
     private void importMP3Files(final List<File> files) {
-        for (File file : files) {
-            MP3 mp3 = new MP3(file.getName(), file.getPath());
+        files.stream().map((file) -> new MP3(file.getName(), file.getPath())).forEachOrdered((mp3) -> {
             ((DefaultListModel)jlist.getModel()).addElement(mp3);
-        }
+        });
     }
 
 }
