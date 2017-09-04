@@ -16,7 +16,7 @@ import utils.FileUtils;
 public class MP3Player implements Player {
 
     public static final String MP3_FILE_EXTENSION = "mp3";
-    public static final String MP3_FILE_DESCRIPTION = "Файлы mp3";
+    public static final String MP3_FILE_DESCRIPTION = "mp3 Files";
     public static int MAX_VOLUME = 100;
 
     private long duration; // song duration in seconds
@@ -44,7 +44,7 @@ public class MP3Player implements Player {
                     progress = bytesread * 1.0f / bytesLen * 1.0f;
                 }
 
-                // сколько секунд прошло
+                // how many seconds already played
                 secondsAmount = (long) (duration * progress);
 
                 if (duration != 0) {
@@ -87,7 +87,7 @@ public class MP3Player implements Player {
     public void play(String fileName) {
 
         try {
-            // if continue to play song after it was paused
+            // if need to continue to play song after it was paused
             if (currentFileName != null && currentFileName.equals(fileName) && basicPlayer.getStatus() == BasicPlayer.PAUSED) {
                 basicPlayer.resume();
                 return;
